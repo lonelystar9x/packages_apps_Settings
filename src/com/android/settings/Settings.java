@@ -545,4 +545,14 @@ public class Settings extends SettingsActivity {
 
     public static class LunarisSettingsActivity extends SettingsActivity {}
     public static class ScreenRefreshRateActivity extends SettingsActivity {}
+
+
+    public static class PersonalizationsLockscreenActivity extends SettingsActivity {}
+    public static class PersonalizationsToolboxActivity extends SettingsActivity {}
+    public static class PersonalizationsThemesActivity extends SettingsActivity {}
+    public static class PersonalizationsClockFacesActivity extends SettingsActivity {}
+    public static class PersonalizationsSpoofActivity extends SettingsActivity {}
+    public static class PersonalizationsBottomActivity extends SettingsActivity {}
+    public static class PersonalizationsStatusbarActivity extends SettingsActivity {}
+    public static class PersonalizationsNotificationsActivity extends SettingsActivity {}
 }

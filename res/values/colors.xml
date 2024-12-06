@@ -275,4 +275,19 @@
     <!-- Connected displays -->
     <color name="display_topology_background_color">@color/settingslib_color_grey100</color>
     <color name="system_secondary">@android:color/system_secondary_light</color>
+
+     <color name="homepage_subicon_bg">@*android:color/system_neutral1_900</color>
+     <color name="something_pref_ripple">@android:color/system_accent1_200</color>
+     <color name="something_pref_color">@android:color/system_neutral1_10</color>
+     <color name="something_pref_opaque">#33FFFFFF</color>
+     <color name="something_background1">@android:color/system_neutral1_50</color>
+     <color name="something_background2">@android:color/system_neutral1_100</color>
+     <color name="something_background3">@android:color/system_accent1_400</color>
+     <color name="mtx_text_color_primary">@color/mtx_text_color_primary_light</color>
+    <color name="mtx_text_color_primary_inverse">#ffffff</color>
+    <color name="mtx_text_color_primary_inverse_translucent">#E0ffffff</color>
+    <color name="mtx_text_color_primary_translucent">#E0000000</color>
+    <color name="mtx_text_color_primary_light">#d8000000</color>
+    <color name="mtx_text_color_secondary">@color/mtx_text_color_secondary_light</color>
+    <color name="mtx_text_color_secondary_light">#66000000</color>
 </resources>

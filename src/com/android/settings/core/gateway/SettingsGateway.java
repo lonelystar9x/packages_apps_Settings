@@ -224,6 +224,15 @@ import org.derpfest.settings.display.refreshrate.ScreenRefreshRateFragment;
 
 import org.lunaris.settings.LunarisSettings;
 
+import org.lunaris.settings.fragments.miscellaneous.Miscellaneous;
+import org.lunaris.settings.fragments.themes.Themes;
+import org.lunaris.settings.fragments.notifications.Notifications;
+import org.lunaris.settings.fragments.lockscreen.LockScreen;
+import org.lunaris.settings.fragments.miscellaneous.Spoofing;
+import org.lunaris.settings.fragments.powermenu.PowerMenu;
+import org.lunaris.settings.fragments.statusbar.StatusBar;
+import org.lunaris.settings.fragments.quicksettings.QuickSettings;
+
 public class SettingsGateway {
 
     /**
@@ -434,6 +443,15 @@ public class SettingsGateway {
             RunningServices.class.getName(),
             LunarisSettings.class.getName(),
             ScreenRefreshRateFragment.class.getName(),
+            SleepMode.class.getName(),
+            Themes.class.getName(),
+            QuickSettings.class.getName(),
+            Miscellaneous.class.getName(),
+            LockScreen.class.getName(),
+            Spoofing.class.getName(),
+            PowerMenu.class.getName(),
+            StatusBar.class.getName(),
+            Notifications.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -484,5 +502,14 @@ public class SettingsGateway {
             Settings.DevRunningServicesActivity.class.getName(),
             Settings.LunarisSettingsActivity.class.getName(),
             Settings.ScreenRefreshRateActivity.class.getName(),
+            Settings.SleepModeActivity.class.getName(),
+            Settings.PersonalizationsLockscreenActivity.class.getName(),
+            Settings.PersonalizationsToolboxActivity.class.getName(),
+            Settings.PersonalizationsThemesActivity.class.getName(),
+            Settings.PersonalizationsClockFacesActivity.class.getName(),
+            Settings.PersonalizationsSpoofActivity.class.getName(),
+            Settings.PersonalizationsBottomActivity.class.getName(),
+            Settings.PersonalizationsStatusbarActivity.class.getName()
+            Settings.PersonalizationsNotificationsActivity.class.getName()
     };
 }

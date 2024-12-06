@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- wallpaper, themes, toolbox layouts -->
+    <LinearLayout
+        android:id="@+id/quick_access_widgets"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1">
+        <!-- System Themes -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/system_themes"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_preference_background"
+                android:clickable="true"
+                android:clipChildren="true"
+                android:clipToPadding="true"
+                android:clipToOutline="true">   
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/theme_colors_animation"
+                android:alpha="0.8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/rattan"/>
+                 <View
+                    android:id="@+id/system_themes_divider"
+                    android:layout_width="2dp"
+                    android:layout_height="2dp"
+                    android:layout_centerInParent="true" />
+                <TextView
+                    android:textSize="18sp"
+                    android:textColor="@color/mtx_text_color_primary"
+                    android:id="@+id/system_themes_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/themes_title"
+                    android:layout_below="@+id/system_themes_divider"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="6dp"
+                    style="@style/mtx_text_style_h6" />
+                <TextView
+                    android:textSize="11.5sp"
+                    android:textColor="@color/mtx_text_color_secondary"
+                    android:id="@+id/system_themes_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/themes_summary"
+                    android:layout_below="@+id/system_themes_title"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="20dp"
+                    style="@style/mtx_text_style_h6" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/toolbox"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_preference_background"
+                android:clickable="true"
+                android:clipChildren="true"
+                android:clipToPadding="true"
+                android:clipToOutline="true">
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/toolbox_colors_animation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:alpha="0.5"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/fallen"/>
+                 <View
+                    android:id="@+id/toolbox_divider"
+                    android:layout_width="2dp"
+                    android:layout_height="2dp"
+                    android:layout_centerInParent="true" />
+                <TextView
+                    android:textSize="18sp"
+                    android:textColor="@color/mtx_text_color_primary"
+                    android:id="@+id/toolbox_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/toolbox_title"
+                    android:layout_below="@+id/toolbox_divider"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="6dp"
+                    style="@style/mtx_text_style_h6" />
+                <TextView
+                    android:textSize="11.5sp"
+                    android:textColor="@color/mtx_text_color_secondary"
+                    android:id="@+id/toolbox_summary"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/toolbox_summary"
+                    android:layout_below="@+id/toolbox_title"
+                    android:layout_marginStart="20dp"
+                    style="@style/mtx_text_style_h6" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!-- Wallpapaper and Themes -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/themes_card"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@*android:color/transparent"
+            android:clickable="true"
+            android:clipToOutline="true"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="0dp">
+
+            <com.android.settings.ui.AnimateWallpaperView
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:foreground="@drawable/wallpaper_scrim"
+                android:background="@drawable/wallpaper_scrim"
+                android:contentDescription="@null"
+                android:elevation="0dp" />
+
+            <RelativeLayout
+                android:id="@+id/themes_clock_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/lockscreen_title"
+                    android:textSize="18sp"
+                    android:layout_above="@+id/lockscreen_clock_preview"
+                    android:textColor="#FFFFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:text="@string/ui_options_title"
+                    android:layout_centerHorizontal="true" 
+                    android:fontFamily="@*android:string/config_bodyFontFamily"
+                    android:textFontWeight="300"
+                    style="@style/mtx_text_style_h6" />
+
+                <TextClock
+                    android:id="@+id/lockscreen_clock_preview"
+                    android:textSize="60sp"
+                    android:textColor="@*android:color/system_accent1_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:format12Hour="hh\nmm"
+                    android:format24Hour="hh\nmm"
+                    android:fontFamily="@*android:string/config_clockFontFamily"
+                    android:textFontWeight="300"
+                    android:layout_centerHorizontal="true" 
+                    style="@style/mtx_text_style_h6" />
+                    
+                <ImageView
+                    android:id="@+id/lock_icon"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/ic_lock"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:tint="#FFFFFFFF"
+                    android:layout_below="@+id/lockscreen_clock_preview"
+                    android:layout_centerHorizontal="true" 
+                    android:layout_marginStart="24dp" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/clock_face_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:id="@+id/clock_face"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@drawable/custom_preference_background"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:clickable="true"
+            android:clipChildren="true"
+            android:clipToPadding="true"
+            android:clipToOutline="true">
+            <TextView
+                android:id="@+id/clock_face_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/theme_customization_lock_clock_title"
+                android:textSize="18sp"
+                android:textColor="@color/mtx_text_color_primary"
+                style="@style/mtx_text_style_h6" />
+            <TextView
+                android:id="@+id/clock_face_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/clock_face_title"
+                android:layout_alignStart="@id/clock_face_title"
+                android:layout_toStartOf="@id/clock_face_icon"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/theme_customization_lock_clock_summary"
+                android:textSize="13sp"
+                android:textColor="@color/mtx_text_color_secondary"
+                style="@style/mtx_text_style_h6" />
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/clock_face_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:background="@*android:color/transparent"
+                    android:clickable="false"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:clipToOutline="true"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="0dp">
+                    <com.android.settings.ui.WallpaperView
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@null"
+                        android:foreground="@drawable/wallpaper_scrim"
+                        android:background="@drawable/wallpaper_scrim"
+                        android:elevation="0dp" />
+                    <RelativeLayout
+                        android:id="@+id/clock_face_clock_frame"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+                        <TextClock
+                            android:id="@+id/clock_face_clock_preview"
+                            android:textSize="28sp"
+                            android:textColor="@*android:color/system_accent1_100"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:format12Hour="hh\nmm"
+                            android:format24Hour="hh\nmm"
+                            android:fontFamily="@*android:string/config_clockFontFamily"
+                            android:textFontWeight="300"
+                            android:textAlignment="center"
+                            android:layout_centerHorizontal="true" 
+                            style="@style/mtx_text_style_h6" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/spoof_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:id="@+id/spoof"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@drawable/custom_preference_background"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:clickable="true"
+            android:clipChildren="true"
+            android:clipToPadding="true"
+            android:clipToOutline="true">
+            <TextView
+                android:id="@+id/spoof_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/spoofing_options_title"
+                android:textSize="18sp"
+                android:textColor="@color/mtx_text_color_primary"
+                style="@style/mtx_text_style_h6" />
+            <TextView
+                android:id="@+id/spoof_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spoof_title"
+                android:layout_alignStart="@id/spoof_title"
+                android:layout_toStartOf="@id/spoof_icon"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="5dp"
+                android:text="Spoof and pixelprops releted stuff"
+                android:textSize="13sp"
+                android:textColor="@color/mtx_text_color_secondary"
+                style="@style/mtx_text_style_h6" />
+                <RelativeLayout
+                    android:id="@+id/spoof_icon"
+                    android:layout_width="65dp"
+                    android:layout_height="80dp"
+                    android:background="@*android:color/transparent"
+                    android:clickable="false"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:clipToOutline="true"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="0dp">
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/spoof_colors_animation"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/amber"/>
+                </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+    android:id="@+id/colors_font"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    
+    <RelativeLayout
+        android:id="@+id/bottom_options"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:layout_weight="1"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/custom_preference_background"
+        android:clickable="true"
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        android:clipToOutline="true">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/bottom_options_animation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:alpha="0.5"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/neiro" />
+
+        <TextView
+            android:id="@+id/bottom_options_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="4dp"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"
+            android:textColor="@color/mtx_text_color_primary"
+            android:text="@string/bottom_options_title"
+            style="@style/mtx_text_style_h6" />
+
+        <TextView
+            android:id="@+id/bottom_options_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bottom_options_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:textSize="11.5sp"
+            android:textColor="@color/mtx_text_color_secondary"
+            android:text="Bottom releted stuff"
+            style="@style/mtx_text_style_h6" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/statusbar"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:layout_weight="1"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/custom_preference_background"
+        android:clickable="true"
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        android:clipToOutline="true">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/statusbar_animation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:alpha="0.5"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/neuro" />
+
+        <TextView
+            android:id="@+id/statusbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="4dp"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"
+            android:textColor="@color/mtx_text_color_primary"
+            android:text="@string/statusbar_options_title"
+            style="@style/mtx_text_style_h6" />
+
+        <TextView
+            android:id="@+id/statusbar_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/statusbar_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:textSize="11.5sp"
+            android:textColor="@color/mtx_text_color_secondary"
+            android:text="Statusbar changes"
+            style="@style/mtx_text_style_h6" />
+    </RelativeLayout>
+</LinearLayout>
+
+</LinearLayout>

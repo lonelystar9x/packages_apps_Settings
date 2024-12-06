@@ -49,4 +49,9 @@
     <!-- Label for showing hidden apps in list [CHAR LIMIT=40] -->
     <string name="filter_hidden_apps">Hidden apps</string>
 
+    <string name="toolbox_title">Quick Settings</string>
+    <string name="toolbox_summary">Quick Settings features</string>
+    <string name="themes_title">System</string>
+    <string name="themes_summary">Your device, your changes</string>
+
 </resources>
