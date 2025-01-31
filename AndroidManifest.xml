@@ -5875,16 +5875,13 @@
             android:taskAffinity="com.android.settings.applock"
             android:launchMode="singleTask" />
 
-<<<<<<< HEAD
-        <!-- This is the longest AndroidManifest.xml ever. -->
-=======
         <!-- Lockscreen Settings -->
         <activity android:name="Settings$PersonalizationsLockscreenActivity"
                   android:label="@string/ui_options_title"
                   android:icon="@drawable/ic_lock_outline"
                   android:exported="true">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.havoc.settings.laboratory.UserInterface" />
+                       android:value="org.lunaris.settings.fragments.themes.Themes" />
         </activity>
         <!-- ToolBox Settings -->
         <activity android:name="Settings$PersonalizationsToolboxActivity"
@@ -5892,7 +5889,7 @@
                   android:icon="@drawable/ic_toolbox_24"
                   android:exported="true">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.havoc.settings.laboratory.QSPanelSettings" />
+                       android:value="org.lunaris.settings.fragments.quicksettings.QuickSettings" />
         </activity>
         <!-- Themes Settings -->
         <activity android:name="Settings$PersonalizationsThemesActivity"
@@ -5900,7 +5897,7 @@
                   android:icon="@drawable/ic_palette_24"
                   android:exported="true">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.havoc.settings.laboratory.System" />
+                       android:value="org.lunaris.settings.fragments.miscellaneous.Miscellaneous" />
         </activity>
 
         <activity android:name="Settings$PersonalizationsClockFacesActivity"
@@ -5908,7 +5905,7 @@
                   android:icon="@drawable/ic_palette_24"
                   android:exported="true">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.android.settings.fragments.LockClockFontsPickerPreview" />
+                       android:value="org.lunaris.settings.fragments.lockscreen.LockScreen" />
         </activity>
 
         <activity android:name="Settings$PersonalizationsSpoofActivity"
@@ -5916,7 +5913,7 @@
                   android:icon="@drawable/ic_spoofing"
                   android:exported="true">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.havoc.settings.laboratory.Spoofing" />
+                       android:value="org.lunaris.settings.fragments.miscellaneous.Spoofing" />
         </activity>
 
         <activity android:name="Settings$PersonalizationsBottomActivity"
@@ -5924,7 +5921,7 @@
                   android:icon="@drawable/ic_spoofing"
                   android:exported="true">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.havoc.settings.laboratory.Bottoms" />
+                       android:value="org.lunaris.settings.fragments.notifications.Notifications" />
         </activity>
 
         <activity android:name="Settings$PersonalizationsStatusbarActivity"
@@ -5932,9 +5929,8 @@
                   android:icon="@drawable/ic_spoofing"
                   android:exported="true">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.havoc.settings.laboratory.Statusbar" />
+                       android:value="org.lunaris.settings.fragments.statusbar.StatusBar" />
         </activity>
 
->>>>>>> d5a8c9bb6fd (Settings: Redesign Lunaris lab)
     </application>
 </manifest>

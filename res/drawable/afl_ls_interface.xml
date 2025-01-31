@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector
+    android:height="24.0dip"
+    android:width="24.0dip"
+    android:viewportWidth="24.0"
+    android:viewportHeight="24.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M15.78,9.19L15.74,6.29C15.34,2.40,8.97,2.40,8.60,6.32L8.60,9.20"
+        android:strokeColor="#90000000"
+        android:strokeWidth="1.7173072"
+        android:strokeLineCap="square"
+        android:strokeLineJoin="miter"
+        android:fillType="nonZero" />
+    <group
+        android:pivotX="12.191"
+        android:pivotY="14.667"
+        android:scaleY="1.0"
+        android:rotation="-0.0">
+        <path
+            android:fillColor="@drawable/ic_interface_ls__1"
+            android:pathData="M8.50,8.39L15.88,8.39A3.65 3.65 0 0 1 19.53,12.04L19.53,17.29A3.65 3.65 0 0 1 15.88,20.95L8.50,20.95A3.65 3.65 0 0 1 4.85,17.29L4.85,12.04A3.65 3.65 0 0 1 8.50,8.39zM13.08,17.22L13.08,15.28Q13.73,14.83,13.91,14.27A1.75 1.80 12.81 1 0 10.58,14.33Q10.91,15.06,11.48,15.20L11.52,17.22C11.78,18.05,12.83,18.01,13.08,17.22z"
+            android:strokeColor="@drawable/ic_interface_ls__0"
+            android:strokeLineCap="square"
+            android:strokeLineJoin="miter"
+            android:fillType="nonZero" />
+    </group>
+</vector>

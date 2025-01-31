@@ -53,5 +53,16 @@
     <string name="toolbox_summary">Quick Settings features</string>
     <string name="themes_title">System</string>
     <string name="themes_summary">Your device, your changes</string>
-
+    <string name="quicksetting_summary">Quick Settings customization options</string>
+    <string name="monet_engine_summary">Customize monet parameters</string>
+    <string name="addon_summary">Explore exclusive system feature</string>
+    <string name="system_summary">System and Theme customization options</string>
+    <string name="statusbar_summary">About Statusbar customization options</string>
+    <string name="power_summary">PowerMenu customization options</string>
+    <string name="notification_summary">Notification customization options</string>
+    <string name="misc_summary">Miscellaneous customization options</string>
+    <string name="lockscreen_summary">Lockscreen customization options</string>
+    <string name="gestures_summary">Gesture and navbar customization options</string>
+    <string name="about_afterlife_summary">Let you know about This Project</string>
+    <string name="button_summary">Buttons customization options</string>
 </resources>

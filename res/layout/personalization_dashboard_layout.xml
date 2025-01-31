@@ -1,464 +1,429 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:gravity="start"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1.0dip"
+    android:baselineAligned="false"
+    android:paddingStart="13.0dip"
+    android:paddingEnd="13.0dip"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <!-- wallpaper, themes, toolbox layouts -->
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
-        android:id="@+id/quick_access_widgets"
-        android:layout_width="match_parent"
-        android:layout_height="320dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="10dp"
-        android:layout_weight="1">
-        <!-- System Themes -->
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.5"
-            android:orientation="vertical">
-            <RelativeLayout
-                android:id="@+id/system_themes"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/custom_preference_background"
-                android:clickable="true"
-                android:clipChildren="true"
-                android:clipToPadding="true"
-                android:clipToOutline="true">   
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/theme_colors_animation"
-                android:alpha="0.8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:scaleType="centerCrop"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/rattan"/>
-                 <View
-                    android:id="@+id/system_themes_divider"
-                    android:layout_width="2dp"
-                    android:layout_height="2dp"
-                    android:layout_centerInParent="true" />
-                <TextView
-                    android:textSize="18sp"
-                    android:textColor="@color/mtx_text_color_primary"
-                    android:id="@+id/system_themes_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/themes_title"
-                    android:layout_below="@+id/system_themes_divider"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="6dp"
-                    style="@style/mtx_text_style_h6" />
-                <TextView
-                    android:textSize="11.5sp"
-                    android:textColor="@color/mtx_text_color_secondary"
-                    android:id="@+id/system_themes_summary"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/themes_summary"
-                    android:layout_below="@+id/system_themes_title"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginStart="20dp"
-                    style="@style/mtx_text_style_h6" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/toolbox"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/custom_preference_background"
-                android:clickable="true"
-                android:clipChildren="true"
-                android:clipToPadding="true"
-                android:clipToOutline="true">
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/toolbox_colors_animation"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:scaleType="centerCrop"
-                android:alpha="0.5"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/fallen"/>
-                 <View
-                    android:id="@+id/toolbox_divider"
-                    android:layout_width="2dp"
-                    android:layout_height="2dp"
-                    android:layout_centerInParent="true" />
-                <TextView
-                    android:textSize="18sp"
-                    android:textColor="@color/mtx_text_color_primary"
-                    android:id="@+id/toolbox_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/toolbox_title"
-                    android:layout_below="@+id/toolbox_divider"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="6dp"
-                    style="@style/mtx_text_style_h6" />
-                <TextView
-                    android:textSize="11.5sp"
-                    android:textColor="@color/mtx_text_color_secondary"
-                    android:id="@+id/toolbox_summary"
-                    android:layout_marginTop="2dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/toolbox_summary"
-                    android:layout_below="@+id/toolbox_title"
-                    android:layout_marginStart="20dp"
-                    style="@style/mtx_text_style_h6" />
-            </RelativeLayout>
-        </LinearLayout>
-        <!-- Wallpapaper and Themes -->
-        <com.google.android.material.card.MaterialCardView
+            android:gravity="center"
             android:id="@+id/themes_card"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.2"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@*android:color/transparent"
             android:clickable="true"
-            android:clipToOutline="true"
-            app:cardCornerRadius="28dp"
-            app:cardElevation="0dp">
-
-            <com.android.settings.ui.AnimateWallpaperView
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:foreground="@drawable/wallpaper_scrim"
-                android:background="@drawable/wallpaper_scrim"
-                android:contentDescription="@null"
-                android:elevation="0dp" />
-
-            <RelativeLayout
-                android:id="@+id/themes_clock_frame"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/lockscreen_title"
-                    android:textSize="18sp"
-                    android:layout_above="@+id/lockscreen_clock_preview"
-                    android:textColor="#FFFFFFFF"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="24dp"
-                    android:text="@string/ui_options_title"
-                    android:layout_centerHorizontal="true" 
-                    android:fontFamily="@*android:string/config_bodyFontFamily"
-                    android:textFontWeight="300"
-                    style="@style/mtx_text_style_h6" />
-
-                <TextClock
-                    android:id="@+id/lockscreen_clock_preview"
-                    android:textSize="60sp"
-                    android:textColor="@*android:color/system_accent1_100"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:format12Hour="hh\nmm"
-                    android:format24Hour="hh\nmm"
-                    android:fontFamily="@*android:string/config_clockFontFamily"
-                    android:textFontWeight="300"
-                    android:layout_centerHorizontal="true" 
-                    style="@style/mtx_text_style_h6" />
-                    
-                <ImageView
-                    android:id="@+id/lock_icon"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_marginTop="24dp"
-                    android:src="@drawable/ic_lock"
-                    android:scaleType="fitCenter"
-                    android:adjustViewBounds="true"
-                    android:tint="#FFFFFFFF"
-                    android:layout_below="@+id/lockscreen_clock_preview"
-                    android:layout_centerHorizontal="true" 
-                    android:layout_marginStart="24dp" />
-
-            </RelativeLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/clock_face_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RelativeLayout
-            android:id="@+id/clock_face"
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="@drawable/custom_preference_background"
-            android:layout_marginBottom="20dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:clickable="true"
-            android:clipChildren="true"
-            android:clipToPadding="true"
-            android:clipToOutline="true">
-            <TextView
-                android:id="@+id/clock_face_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
-                android:text="@string/theme_customization_lock_clock_title"
-                android:textSize="18sp"
-                android:textColor="@color/mtx_text_color_primary"
-                style="@style/mtx_text_style_h6" />
-            <TextView
-                android:id="@+id/clock_face_summary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/clock_face_title"
-                android:layout_alignStart="@id/clock_face_title"
-                android:layout_toStartOf="@id/clock_face_icon"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:text="@string/theme_customization_lock_clock_summary"
-                android:textSize="13sp"
-                android:textColor="@color/mtx_text_color_secondary"
-                style="@style/mtx_text_style_h6" />
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/clock_face_icon"
-                    android:layout_width="60dp"
-                    android:layout_height="80dp"
-                    android:background="@*android:color/transparent"
-                    android:clickable="false"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:clipToOutline="true"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="0dp">
-                    <com.android.settings.ui.WallpaperView
+            android:layout_width="fill_parent"
+            android:layout_height="350.0dip"
+            android:layout_marginTop="20.0dip"
+            android:layout_marginBottom="16.0dip"
+            android:layout_weight="1.0"
+            android:layout_marginHorizontal="16.0dip">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/afl_lockscreen_feature_card"
+                android:background="@android:color/transparent"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.5"
+                android:layout_marginEnd="8.0dip"
+                app:cardCornerRadius="26.0dip"
+                app:cardElevation="5.0dip"
+                app:rippleColor="@android:color/system_accent1_300"
+                app:strokeColor="?android:textColorPrimary"
+                app:strokeWidth="2.0dip">
+                <com.android.settings.ui.AnimateWallpaperView
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:scaleType="centerCrop"
+                    android:elevation="0.0dip" />
+                <RelativeLayout
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <ImageView
+                        android:layout_width="18.0dip"
+                        android:layout_height="18.0dip"
+                        android:layout_marginBottom="24.0dip"
+                        android:src="@drawable/ic_lock_outline"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:tint="#ffffffff"
+                        android:layout_above="@+id/afl_lockscreen_feature_clock_preview"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="16.0dip" />
+                    <TextClock
+                        android:textSize="34.0sp"
+                        android:textColor="#ffffffff"
+                        android:id="@+id/afl_lockscreen_feature_clock_preview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="48.0dip"
+                        android:layout_above="@+id/afl_lockscreen_clock_preview"
+                        android:layout_centerHorizontal="true"
+                        android:format12Hour="hh:mm"
+                        android:format24Hour="HH:mm"
+                        android:textFontWeight="300"
+                        style="@style/afl_text_primary" />
+                    <TextClock
+                        android:textSize="14.0sp"
+                        android:textColor="#ffffffff"
+                        android:id="@+id/afl_lockscreen_clock_preview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="48.0dip"
+                        android:layout_centerHorizontal="true"
+                        android:format12Hour="EEE, MMM dd"
+                        android:format24Hour="EEE, MMM dd"
+                        android:textFontWeight="300"
+                        style="@style/afl_text_primary" />
+                    <TextView
+                        android:textSize="17.0sp"
+                        android:textColor="#ffffffff"
+                        android:id="@+id/afl_lockscreen_feature_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24.0dip"
+                        android:text="Themes"
+                        android:layout_below="@+id/afl_lockscreen_clock_preview"
+                        android:layout_centerHorizontal="true"
+                        android:textFontWeight="300"
+                        style="@style/afl_text_primary" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+                <LinearLayout
                         android:gravity="center"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:contentDescription="@null"
-                        android:foreground="@drawable/wallpaper_scrim"
-                        android:background="@drawable/wallpaper_scrim"
-                        android:elevation="0dp" />
-                    <RelativeLayout
-                        android:id="@+id/clock_face_clock_frame"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center">
-                        <TextClock
-                            android:id="@+id/clock_face_clock_preview"
-                            android:textSize="28sp"
-                            android:textColor="@*android:color/system_accent1_100"
+                        android:orientation="vertical"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="0.5"
+                        android:layout_marginStart="8.0dip">
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:id="@+id/clock_face"
+                            android:background="@drawable/afl_card_interface_nirwana"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150.0dip"
+                            android:layout_marginBottom="8.0dip"
+                            android:layout_weight="1.0"
+                            android:paddingStart="16.0dip"
+                            android:paddingEnd="16.0dip">
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/clock_face_icon"
+                                android:gravity="center"
+                                android:layout_width="90dp"
+                                android:layout_height="70dp"
+                                android:background="@*android:color/transparent"
+                                android:clickable="false"
+                                android:clipToOutline="true"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+                                <com.android.settings.ui.WallpaperView
+                                    android:gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:contentDescription="@null"
+                                    android:foreground="@drawable/wallpaper_scrim"
+                                    android:background="@drawable/wallpaper_scrim"
+                                    android:elevation="0dp" />
+                                <RelativeLayout
+                                    android:id="@+id/clock_face_clock_frame"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center">
+                                    <TextClock
+                                        android:id="@+id/clock_face_clock_preview"
+                                        android:textSize="25sp"
+                                        android:textColor="@*android:color/system_accent1_100"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:format12Hour="hh:mm"
+                                        android:format24Hour="hh:mm"
+                                        android:fontFamily="@*android:string/config_clockFontFamily"
+                                        android:textFontWeight="300"
+                                        android:textAlignment="center"
+                                        android:layout_centerInParent="true"
+                                        style="@style/mtx_text_style_h6" />
+                                </RelativeLayout>
+                            </com.google.android.material.card.MaterialCardView>
+                            <TextView
+                                android:textSize="17.0sp"
+                                android:textColor="?android:textColorPrimary"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:layout_width="fill_parent"
+                                android:layout_height="49.0dip"
+                                android:text="Lockscreen"
+                                android:maxLines="2"
+                                style="@style/afl_text_primary" />
+                        </LinearLayout>
+                <LinearLayout
+                    android:gravity="start|center"
+                    android:orientation="vertical"
+                    android:id="@+id/system_themes"
+                    android:background="@drawable/afl_card_interface_nirwana"
+                    android:padding="16.0dip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200.0dip"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_weight="1.0">
+                    <TextView
+                        android:textSize="18.0sp"
+                        android:textColor="?android:textColorPrimary"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="System"
+                        android:maxLines="2"
+                        style="@style/afl_text_primary" />
+                    <TextView
+                        android:textSize="13.0sp"
+                        android:textColor="?android:textColorPrimary"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/addon_summary"
+                        android:maxLines="3"
+                        android:layout_marginVertical="16.0dip"
+                        style="@style/afl_text_primary" />
+                    <TextView
+                        android:textSize="15.0sp"
+                        android:textColor="?android:textColorPrimary"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:background="@drawable/afl_card_interface_nirwana"
+                        android:padding="4.0dip"
+                        android:layout_width="80.0dip"
+                        android:layout_height="30.0dip"
+                        android:text="Here!"
+                        android:backgroundTint="@android:color/system_accent1_300"
+                        style="@style/afl_text_primary" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="150.0dip"
+            android:layout_marginBottom="16.0dip"
+            android:layout_marginHorizontal="16.0dip">
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/toolbox"
+                android:background="@drawable/afl_card_interface_nirwana"
+                android:padding="16.0dip"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:layout_marginEnd="8.0dip">
+                <ImageView
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="30.0dip"
+                    android:layout_height="30.0dip"
+                    android:src="@drawable/afl_qs_interface" />
+                <TextView
+                    android:textSize="17.0sp"
+                    android:textColor="?android:textColorPrimary"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="49.0dip"
+                    android:text="Quick Settings"
+                    android:maxLines="2"
+                    style="@style/afl_text_primary" />
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="start|center"
+                android:orientation="vertical"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:layout_marginStart="8.0dip">
+                <LinearLayout
+                    android:gravity="start|center"
+                    android:orientation="vertical"
+                    android:id="@+id/dw_tile"
+                    android:background="@drawable/afl_card_interface_nirwana"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="8.0dip"
+                    android:layout_weight="1.0"
+                    android:paddingStart="16.0dip"
+                    android:paddingEnd="16.0dip">
+                    <FrameLayout
+                        android:padding="0.0dip"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"
+                            android:alpha="0.8"
+                            android:layout_alignParentStart="true"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/rattan" />
+                        <TextView
+                            android:textSize="18.0sp"
+                            android:textColor="?android:textColorPrimary"
+                            android:ellipsize="marquee"
+                            android:gravity="center"
+                            android:layout_gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:format12Hour="hh\nmm"
-                            android:format24Hour="hh\nmm"
-                            android:fontFamily="@*android:string/config_clockFontFamily"
-                            android:textFontWeight="300"
-                            android:textAlignment="center"
-                            android:layout_centerHorizontal="true" 
-                            style="@style/mtx_text_style_h6" />
-                    </RelativeLayout>
-                </com.google.android.material.card.MaterialCardView>
-        </RelativeLayout>
+                            android:text="Monet"
+                            android:singleLine="true"
+                            style="@style/afl_text_primary" />
+                    </FrameLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="start|center"
+                    android:orientation="vertical"
+                    android:id="@+id/spoof"
+                    android:background="@drawable/afl_card_interface_nirwana"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_weight="1.0"
+                    android:paddingStart="16.0dip"
+                    android:paddingEnd="16.0dip">
+                    <FrameLayout
+                        android:padding="0.0dip"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"
+                            android:alpha="0.5"
+                            android:layout_alignParentStart="true"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/fallen" />
+                        <TextView
+                            android:textSize="18.0sp"
+                            android:textColor="?android:textColorPrimary"
+                            android:ellipsize="marquee"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Spoofing"
+                            android:singleLine="true"
+                            style="@style/afl_text_primary" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:background="@drawable/afl_card_interface_nirwana"
+            android:layout_width="fill_parent"
+            android:layout_height="115.0dip"
+            android:layout_marginHorizontal="16.0dip">
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/bottom_options"
+                android:background="@drawable/afl_card_interface_nirwana"
+                android:padding="20.0dip"
+                android:layout_width="0.0dip"
+                android:layout_height="100.0dip"
+                android:layout_weight="1.0"
+                android:layout_marginStart="8.0dip"
+                android:layout_marginEnd="8.0dip"
+                android:backgroundTint="@android:color/system_accent1_300">
+                <ImageView
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="25.0dip"
+                    android:layout_height="25.0dip"
+                    android:src="@drawable/afl_gesture_interface"
+                    android:tint="#ff000000" />
+                <TextView
+                    android:textSize="11.0sp"
+                    android:textColor="#ff000000"
+                    android:ellipsize="marquee"
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40.0dip"
+                    android:text="Buttons"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    style="@style/afl_text_primary" />
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/statusbar"
+                android:background="@drawable/afl_card_interface_nirwana"
+                android:padding="16.0dip"
+                android:layout_width="0.0dip"
+                android:layout_height="100.0dip"
+                android:layout_weight="1.0"
+                android:layout_marginStart="8.0dip"
+                android:backgroundTint="@android:color/system_accent1_300">
+                <ImageView
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="25.0dip"
+                    android:layout_height="25.0dip"
+                    android:src="@drawable/afl_misc_interface"
+                    android:tint="#ff000000" />
+                <TextView
+                    android:textSize="11.0sp"
+                    android:textColor="#ff000000"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40.0dip"
+                    android:text="Statusbar"
+                    style="@style/afl_text_primary" />
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/aod_tile"
+                android:background="@drawable/afl_card_interface_nirwana"
+                android:padding="16.0dip"
+                android:layout_width="0.0dip"
+                android:layout_height="100.0dip"
+                android:layout_weight="1.0"
+                android:layout_marginStart="16.0dip"
+                android:layout_marginEnd="8.0dip"
+                android:backgroundTint="@android:color/system_accent1_300">
+                <ImageView
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="25.0dip"
+                    android:layout_height="25.0dip"
+                    android:src="@drawable/ic_ambient"
+                    android:tint="#ff000000" />
+                <TextView
+                    android:textSize="11.0sp"
+                    android:textColor="#ff000000"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40.0dip"
+                    android:text="Perf Mode"
+                    style="@style/afl_text_primary" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/spoof_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RelativeLayout
-            android:id="@+id/spoof"
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="@drawable/custom_preference_background"
-            android:layout_marginBottom="20dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:clickable="true"
-            android:clipChildren="true"
-            android:clipToPadding="true"
-            android:clipToOutline="true">
-            <TextView
-                android:id="@+id/spoof_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
-                android:text="@string/spoofing_options_title"
-                android:textSize="18sp"
-                android:textColor="@color/mtx_text_color_primary"
-                style="@style/mtx_text_style_h6" />
-            <TextView
-                android:id="@+id/spoof_summary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/spoof_title"
-                android:layout_alignStart="@id/spoof_title"
-                android:layout_toStartOf="@id/spoof_icon"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:text="Spoof and pixelprops releted stuff"
-                android:textSize="13sp"
-                android:textColor="@color/mtx_text_color_secondary"
-                style="@style/mtx_text_style_h6" />
-                <RelativeLayout
-                    android:id="@+id/spoof_icon"
-                    android:layout_width="65dp"
-                    android:layout_height="80dp"
-                    android:background="@*android:color/transparent"
-                    android:clickable="false"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:clipToOutline="true"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="0dp">
-                    <com.airbnb.lottie.LottieAnimationView
-                        android:id="@+id/spoof_colors_animation"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:scaleType="centerCrop"
-                        app:lottie_autoPlay="true"
-                        app:lottie_loop="true"
-                        app:lottie_rawRes="@raw/amber"/>
-                </RelativeLayout>
-        </RelativeLayout>
-    </LinearLayout>
-
-    <LinearLayout
-    android:id="@+id/colors_font"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
-    
-    <RelativeLayout
-        android:id="@+id/bottom_options"
-        android:layout_width="0dp"
-        android:layout_height="85dp"
-        android:layout_weight="1"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/custom_preference_background"
-        android:clickable="true"
-        android:clipChildren="true"
-        android:clipToPadding="true"
-        android:clipToOutline="true">
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/bottom_options_animation"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:scaleType="centerCrop"
-            android:alpha="0.5"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/neiro" />
-
-        <TextView
-            android:id="@+id/bottom_options_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="4dp"
-            android:layout_centerVertical="true"
-            android:textSize="18sp"
-            android:textColor="@color/mtx_text_color_primary"
-            android:text="@string/bottom_options_title"
-            style="@style/mtx_text_style_h6" />
-
-        <TextView
-            android:id="@+id/bottom_options_summary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bottom_options_title"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
-            android:textSize="11.5sp"
-            android:textColor="@color/mtx_text_color_secondary"
-            android:text="Bottom releted stuff"
-            style="@style/mtx_text_style_h6" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/statusbar"
-        android:layout_width="0dp"
-        android:layout_height="85dp"
-        android:layout_weight="1"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/custom_preference_background"
-        android:clickable="true"
-        android:clipChildren="true"
-        android:clipToPadding="true"
-        android:clipToOutline="true">
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/statusbar_animation"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:scaleType="centerCrop"
-            android:alpha="0.5"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/neuro" />
-
-        <TextView
-            android:id="@+id/statusbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="4dp"
-            android:layout_centerVertical="true"
-            android:textSize="18sp"
-            android:textColor="@color/mtx_text_color_primary"
-            android:text="@string/statusbar_options_title"
-            style="@style/mtx_text_style_h6" />
-
-        <TextView
-            android:id="@+id/statusbar_summary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/statusbar_title"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
-            android:textSize="11.5sp"
-            android:textColor="@color/mtx_text_color_secondary"
-            android:text="Statusbar changes"
-            style="@style/mtx_text_style_h6" />
-    </RelativeLayout>
-</LinearLayout>
-
 </LinearLayout>

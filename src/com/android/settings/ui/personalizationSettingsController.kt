@@ -40,7 +40,9 @@ class personalizationSettingsController(context: Context) : AbstractPreferenceCo
             R.id.clock_face to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$PersonalizationsClockFacesActivity")),
             R.id.spoof to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$PersonalizationsSpoofActivity")),
             R.id.bottom_options to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$PersonalizationsBottomActivity")),
-            R.id.statusbar to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$PersonalizationsStatusbarActivity"))
+            R.id.statusbar to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$PersonalizationsStatusbarActivity")),
+            R.id.aod_tile to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$PersonalizationsAODActivity")),
+            R.id.dw_tile to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$PersonalizationsDWActivity"))
        )
 
         clickMap.forEach { (id, intent) ->
