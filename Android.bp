@@ -3,8 +3,6 @@ package {
     default_applicable_licenses: ["packages_apps_Settings_license"],
 }
 
-// Added automatically by a large-scale-change
-// See: http://go/android-license-faq
 license {
     name: "packages_apps_Settings_license",
     visibility: [":__subpackages__"],
@@ -47,6 +45,70 @@ java_library {
     },
 }
 
+// ========== WEATHER EFFECTS ML LIBRARY (TFLite Only) ==========
+android_library {
+    name: "WeatherEffectsMLLib",
+    sdk_version: "current",
+    min_sdk_version: "30",
+    
+    srcs: [
+        "src/com/android/settings/wallpaper/ml/TFLiteSegmentationHelper.kt",
+        "src/com/android/settings/wallpaper/ml/SegmentationPreviewActivity.kt",
+    ],
+    
+    static_libs: [
+        // TensorFlow Lite (REQUIRED - only 2 libraries)
+        "tensorflow-lite",
+        "tensorflow-lite-gpu",
+        // NOTE: tensorflow-lite-support is OPTIONAL
+        // Uncomment below if you have it downloaded:
+        // "tensorflow-lite-support",
+        
+        // Coroutines for async
+        "kotlinx_coroutines",
+        "kotlinx_coroutines_android",
+        "kotlin-stdlib",
+    ],
+    
+    asset_dirs: [
+        "assets/ml_models",
+    ],
+    
+    optimize: {
+        enabled: true,
+        shrink: false,
+    },
+}
+
+// ========== WEATHER EFFECTS SETTINGS LIBRARY ==========
+android_library {
+    name: "WeatherEffectsSettingsLib",
+    sdk_version: "current",
+    min_sdk_version: "30",
+    
+    srcs: [
+        "src/com/android/settings/wallpaper/WeatherEffectsSettingsActivity.kt",
+        "src/com/android/settings/wallpaper/WeatherEffectsPreferenceFragment.kt",
+        "src/com/android/settings/wallpaper/WeatherEffectsHelper.kt",
+    ],
+    
+    resource_dirs: [
+        "res-weathereffects",
+    ],
+    
+    static_libs: [
+        "WeatherEffectsMLLib",
+        "androidx.appcompat_appcompat",
+        "androidx.cardview_cardview",
+        "androidx-constraintlayout_constraintlayout",
+        "kotlinx_coroutines",
+        "kotlinx_coroutines_android",
+        "kotlin-stdlib",
+    ],
+    
+    manifest: "weathereffects/AndroidManifest.xml",
+}
+
 android_library {
     name: "Settings-core",
     defaults: [
@@ -71,8 +133,9 @@ android_library {
 
     resource_dirs: [
         "res",
-        "res-export", // for external usage
+        "res-export",
         "res-product",
+        "res-weathereffects", // Weather effects resources
         "Singularity/res",
     ],
 
@@ -141,6 +204,10 @@ android_library {
         "kotlin-stdlib",
         "kotlinx_coroutines_android",
         "kotlinx_coroutines",
+        
+        // Weather Effects (TFLite only)
+        "WeatherEffectsSettingsLib",
+        "WeatherEffectsMLLib",
     ],
 
     plugins: [
@@ -223,4 +290,30 @@ filegroup {
 android_library_import {
     name: "glide",
     aars: ["libs/glide-4.16.0.aar"],
+}
+
+android_library_import {
+    name: "tensorflow-lite",
+    aars: ["libs/tensorflow-lite-2.14.0.aar"],
+    sdk_version: "current",
+}
+
+android_library_import {
+    name: "tensorflow-lite-gpu",
+    aars: ["libs/tensorflow-lite-gpu-2.14.0.aar"],
+    sdk_version: "current",
+}
+
+prebuilt_etc {
+    name: "deeplabv3_model",
+    src: "assets/ml_models/deeplabv3_257_mv_gpu.tflite",
+    sub_dir: "weather_effects",
+    system_ext_specific: true,
+}
+
+prebuilt_etc {
+    name: "deeplabv3_quantized_model",
+    src: "assets/ml_models/deeplabv3_quantized.tflite",
+    sub_dir: "weather_effects",
+    system_ext_specific: true,
 }
