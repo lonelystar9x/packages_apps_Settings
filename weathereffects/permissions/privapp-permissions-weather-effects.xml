@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Privileged permissions for Weather Effects in Settings.
+    This file grants Settings the necessary permissions to:
+    - Access wallpaper management
+    - Read/write ML models
+    - Use GPU acceleration
+    - Communicate with WeatherWallpaperService
+-->
+<permissions>
+    <privapp-permissions package="com.android.settings">
+        <!-- Wallpaper management permissions -->
+        <permission name="android.permission.SET_WALLPAPER" />
+        <permission name="android.permission.SET_WALLPAPER_HINTS" />
+        <permission name="android.permission.SET_WALLPAPER_COMPONENT" />
+        <permission name="android.permission.BIND_WALLPAPER" />
+        
+        <!-- Read wallpaper for processing -->
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" />
+        <permission name="android.permission.READ_MEDIA_IMAGES" />
+        
+        <!-- Write processed images to cache -->
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        
+        <!-- Access weather wallpaper service -->
+        <permission name="android.permission.QUERY_ALL_PACKAGES" />
+        
+        <!-- GPU acceleration for ML -->
+        <permission name="android.permission.ACCESS_GRAPHICS_PIPELINE" />
+    </privapp-permissions>
+    
+    <!-- Permissions for WeatherWallpaperService -->
+    <privapp-permissions package="com.google.android.wallpaper.weathereffects">
+        <!-- Wallpaper service permissions -->
+        <permission name="android.permission.BIND_WALLPAPER" />
+        <permission name="android.permission.SET_WALLPAPER" />
+        <permission name="android.permission.SET_WALLPAPER_HINTS" />
+        
+        <!-- Read wallpaper assets -->
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" />
+        <permission name="android.permission.READ_MEDIA_IMAGES" />
+        
+        <!-- Write to device protected storage -->
+        <permission name="android.permission.WRITE_DEVICE_CONFIG" />
+        
+        <!-- Keyguard/lock screen access -->
+        <permission name="android.permission.DISABLE_KEYGUARD" />
+        <permission name="android.permission.READ_DEVICE_CONFIG" />
+        
+        <!-- GPU rendering -->
+        <permission name="android.permission.ACCESS_GRAPHICS_PIPELINE" />
+        
+        <!-- Receive broadcasts from Settings -->
+        <permission name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    </privapp-permissions>
+</permissions>

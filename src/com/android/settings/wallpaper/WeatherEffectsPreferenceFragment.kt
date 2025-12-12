@@ -6,6 +6,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
 import com.android.settings.R
+import com.google.android.wallpaper.weathereffects.provider.WallpaperInfoContract
 
 /**
  * Preference fragment to be added to your ROM's Display settings.
@@ -78,10 +79,10 @@ class WeatherEffectsPreferenceFragment : PreferenceFragmentCompat() {
     
     private fun clearWeatherEffect() {
         // Send intent to clear weather effect
-        val uri = com.google.android.wallpaper.weathereffects.provider.WallpaperInfoContract
+        val uri = WallpaperInfoContract
             .getUpdateWallpaperUri()
             .appendQueryParameter(
-                com.google.android.wallpaper.weathereffects.provider.WallpaperInfoContract.WEATHER_EFFECT_PARAM,
+                WallpaperInfoContract.WEATHER_EFFECT_PARAM,
                 null
             )
             .build()

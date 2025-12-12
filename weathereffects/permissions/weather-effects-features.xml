@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Feature declaration for Weather Effects.
+    Allows other apps to check if weather effects are available on the device.
+-->
+<permissions>
+    <!-- Weather effects feature -->
+    <feature name="com.android.settings.weather_effects" />
+    
+    <!-- ML-based segmentation support -->
+    <feature name="com.android.settings.weather_effects.ml_segmentation" />
+    
+    <!-- GPU acceleration support -->
+    <feature name="com.android.settings.weather_effects.gpu_acceleration" />
+    
+    <!-- Available weather types -->
+    <feature name="com.android.settings.weather_effects.rain" />
+    <feature name="com.android.settings.weather_effects.snow" />
+    <feature name="com.android.settings.weather_effects.fog" />
+    <feature name="com.android.settings.weather_effects.sun" />
+</permissions>

@@ -8,12 +8,17 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.android.settings.R
+import com.android.settings.wallpaper.ml.TFLiteSegmentationHelper
 import com.google.android.wallpaper.weathereffects.provider.WallpaperInfoContract
 import kotlinx.coroutines.*
+import java.io.File
+import java.io.FileOutputStream
 
 /**
  * Settings activity to configure and apply weather wallpaper effects
@@ -37,6 +42,13 @@ class WeatherEffectsSettingsActivity : AppCompatActivity() {
     private var selectedImageUri: Uri? = null
     private var currentWeatherEffect = WallpaperInfoContract.WeatherEffect.RAIN
     private var currentIntensity = 1.0f
+    
+    // Add segmentation helper
+    private var segmentationHelper: TFLiteSegmentationHelper? = null
+    
+    companion object {
+        private const val TAG = "WeatherEffectsSettings"
+    }
     
     private val imagePickerLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()
@@ -202,12 +214,11 @@ class WeatherEffectsSettingsActivity : AppCompatActivity() {
         return null
     }
     
-    // Add segmentation helper
-    private var segmentationHelper: TFLiteSegmentationHelper? = null
-    
     private suspend fun processImage(filePath: String): Pair<String, String> = withContext(Dispatchers.IO) {
         try {
-            statusText.text = "Processing image with AI..."
+            withContext(Dispatchers.Main) {
+                statusText.text = "Processing image with AI..."
+            }
             
             // Initialize segmentation helper if needed
             if (segmentationHelper == null) {

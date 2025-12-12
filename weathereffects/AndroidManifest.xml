@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Manifest for Weather Effects Settings Library.
+    This is merged into the main Settings manifest.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.settings.weathereffects">
+
+    <!-- Permissions required for weather effects -->
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER_COMPONENT" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    
+    <!-- GPU features for ML acceleration -->
+    <uses-feature 
+        android:name="android.hardware.opengles.aep"
+        android:required="false" />
+    <uses-feature 
+        android:name="android.hardware.vulkan.level"
+        android:version="1"
+        android:required="false" />
+    <uses-feature 
+        android:name="android.hardware.vulkan.compute"
+        android:version="0"
+        android:required="false" />
+
+    <application>
+        <!-- Weather Effects Settings Activity -->
+        <activity
+            android:name="com.android.settings.wallpaper.WeatherEffectsSettingsActivity"
+            android:label="@string/weather_effects_title"
+            android:theme="@style/Theme.Settings"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:largeHeap="true">
+            <!-- Large heap for ML processing -->
+        </activity>
+
+        <!-- Segmentation Preview Activity -->
+        <activity
+            android:name="com.android.settings.wallpaper.ml.SegmentationPreviewActivity"
+            android:label="@string/segmentation_preview_title"
+            android:theme="@style/Theme.Settings"
+            android:exported="false"
+            android:configChanges="orientation|screenSize"
+            android:largeHeap="true">
+            <!-- Large heap for image processing -->
+        </activity>
+
+        <!-- Content Provider for querying weather effects capability -->
+        <provider
+            android:name="com.android.settings.wallpaper.WeatherEffectsProvider"
+            android:authorities="com.android.settings.weathereffects"
+            android:exported="true"
+            android:permission="android.permission.BIND_WALLPAPER"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.content.action.WEATHER_EFFECTS_QUERY" />
+            </intent-filter>
+        </provider>
+
+        <!-- Service for background ML processing (optional) -->
+        <service
+            android:name="com.android.settings.wallpaper.ml.SegmentationService"
+            android:exported="false"
+            android:process=":ml_processing"
+            android:isolatedProcess="false">
+            <!-- Separate process for memory isolation -->
+        </service>
+    </application>
+
+</manifest>

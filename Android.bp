@@ -60,9 +60,6 @@ android_library {
         // TensorFlow Lite (REQUIRED - only 2 libraries)
         "tensorflow-lite",
         "tensorflow-lite-gpu",
-        // NOTE: tensorflow-lite-support is OPTIONAL
-        // Uncomment below if you have it downloaded:
-        // "tensorflow-lite-support",
         
         // Coroutines for async
         "kotlinx_coroutines",
@@ -93,7 +90,7 @@ android_library {
     ],
     
     resource_dirs: [
-        "res-weathereffects",
+        "res",  // Use existing res directory
     ],
     
     static_libs: [
@@ -135,7 +132,6 @@ android_library {
         "res",
         "res-export",
         "res-product",
-        "res-weathereffects", // Weather effects resources
         "Singularity/res",
     ],
 
@@ -292,6 +288,7 @@ android_library_import {
     aars: ["libs/glide-4.16.0.aar"],
 }
 
+// ========== TENSORFLOW LITE (Only 2 required) ==========
 android_library_import {
     name: "tensorflow-lite",
     aars: ["libs/tensorflow-lite-2.14.0.aar"],
@@ -304,6 +301,7 @@ android_library_import {
     sdk_version: "current",
 }
 
+// ========== ML MODELS ==========
 prebuilt_etc {
     name: "deeplabv3_model",
     src: "assets/ml_models/deeplabv3_257_mv_gpu.tflite",
